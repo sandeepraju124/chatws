@@ -56,6 +56,8 @@
 # if __name__ == '__main__':
 #     # socketio.run(app, debug=True, host='0.0.0.0')
 #     socketio.run(app, debug=True)
+
+
 import eventlet
 eventlet.monkey_patch()
 
@@ -129,7 +131,11 @@ def get_active_users(data):
     emit('active_users', {'users': users}, room=room)
     logging.info(f'Active users in room {room}: {users}')
 
+# if __name__ == '__main__':
+#     import eventlet
+#     eventlet.monkey_patch()
+#     socketio.run(app, debug=True, host='0.0.0.0', port=5000)
+
+
 if __name__ == '__main__':
-    import eventlet
-    eventlet.monkey_patch()
-    socketio.run(app, debug=True, host='0.0.0.0', port=5000)
+    socketio.run(app)
