@@ -56,14 +56,13 @@
 # if __name__ == '__main__':
 #     # socketio.run(app, debug=True, host='0.0.0.0')
 #     socketio.run(app, debug=True)
-
+import eventlet
+eventlet.monkey_patch()
 
 from flask import Flask, request, jsonify
 from flask_socketio import SocketIO, emit, join_room, leave_room
 import logging
-import eventlet
 
-eventlet.monkey_patch()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '9912277968'
