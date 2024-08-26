@@ -54,4 +54,5 @@ def get_active_users(data):
     emit('active_users', {'users': users}, room=room)
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True, host='0.0.0.0')
+    # socketio.run(app, debug=True, host='0.0.0.0')
+    socketio.run(app, debug=True)
